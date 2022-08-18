@@ -2,17 +2,7 @@
 import React, {useState} from'react'
 //import { useTranslation } from 'react-i18next';
 
-
-
-
-
 export default function TextBox(props) {
-
-    
-      
-
-    
-
     const handleUpClick = ()=> {
         //console.log("UpperCase was clicked" + text);
         let newText = text.toUpperCase();
@@ -68,7 +58,7 @@ export default function TextBox(props) {
     const changeBtnColor = ()=> {
         if(style.backgroundColor === 'green'){
             setStyle({
-                backgroundColor : '#FFB4B4'
+               
             })
         }else if(style.backgroundColor === 'red'){
             setStyle({
@@ -93,11 +83,11 @@ export default function TextBox(props) {
               </div>
               
               <div className="container"  onClick={changeBtnColor}>
-                <button disabled = {text.length === 0}className="btn btn-primary mx-1 my-1" onClick={handleUpClick} >Convert to UpperCase</button>
-                <button disabled = {text.length === 0} className="btn btn-primary mx-1 my-1" onClick={handleLowClick}>Convert to LowerCase</button>
-                <button disabled = {text.length === 0}className='btn btn-primary mx-1 my-1' onClick={handleCopyClick}>Copy Text</button>
-                <button disabled = {text.length === 0}className='btn btn-primary mx-1 my-1' onClick={handleExtraSpace}>Remove Extra Spaces</button>
-                <button disabled = {text.length === 0}className='btn btn-primary mx-1 my-1' onClick={handleClrTxt}>Clear</button>
+                <button style={{backgroundColor: props.btncolor}} disabled = {text.length === 0}className="btn btn-primary mx-1 my-1" onClick={handleUpClick} >Convert to UpperCase</button>
+                <button style={{backgroundColor: props.btncolor}} disabled = {text.length === 0} className="btn btn-primary mx-1 my-1" onClick={handleLowClick}>Convert to LowerCase</button>
+                <button style={{backgroundColor: props.btncolor}} disabled = {text.length === 0}className='btn btn-primary mx-1 my-1' onClick={handleCopyClick}>Copy Text</button>
+                <button style={{backgroundColor: props.btncolor}} disabled = {text.length === 0}className='btn btn-primary mx-1 my-1' onClick={handleExtraSpace}>Remove Extra Spaces</button>
+                <button style={{backgroundColor: props.btncolor}} disabled = {text.length === 0}className='btn btn-primary mx-1 my-1' onClick={handleClrTxt}>Clear</button>
              </div>
              
 

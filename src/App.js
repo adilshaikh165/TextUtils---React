@@ -16,6 +16,7 @@ function App() {
   const[mode,setMode] = useState('light');
   const[alert,setAlert] = useState(null);
   const[checks,setChecks] = useState('light');
+  const[btncolor,setBtnColor] = useState('');
 
   const toggleMode = ()=> {
     if(mode === 'light' ){
@@ -33,18 +34,21 @@ function App() {
   }
 
   const invokeGreenChecks = ()=> {
+    setBtnColor("#F900BF");
     setChecks("green");
-    document.body.style.backgroundColor = '#3CCF4E'
-    showAlert("The green mode has been enabled ", "success")
+    document.body.style.backgroundColor = '#3CCF4E';
+    showAlert("The green mode has been enabled ", "success");
   }
 
   const invokeRedChecks = ()=> {
+    setBtnColor("#42032C");
     setChecks("red");
-    document.body.style.backgroundColor = '#EB1D36'
+    document.body.style.backgroundColor = '#EB1D36';
     showAlert("The red mode has been enabled ", "success")
   }
 
   const invokeGreyChecks = ()=> {
+    setBtnColor("#121212");
     setChecks("grey");
     document.body.style.backgroundColor = '#576F72'
     showAlert("The grey mode has been enabled ", "success")
@@ -73,7 +77,7 @@ function App() {
               </Route> 
               
               <Route exact path="/">
-                <TextBox showAlert={showAlert} heading = "Try TextUtils - Word counter , Charachter counter , Remove extra spaces  " mode={mode} checks={checks}/>
+                <TextBox btncolor={btncolor} showAlert={showAlert} heading = "Try TextUtils - Word counter , Charachter counter , Remove extra spaces  " mode={mode} checks={checks}/>
               </Route>
         </Switch>
       </div>
