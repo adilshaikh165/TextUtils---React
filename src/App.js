@@ -25,8 +25,8 @@ function App() {
       setBtnColor(" ");
       setMode("dark");
       document.getElementById("inlineRadio1").checked = false;
-      // document.getElementById("inlineRadio2").checked = false;
-      // document.getElementById("inlineRadio3").checked = false;
+      document.getElementById("inlineRadio2").checked = false;
+      document.getElementById("inlineRadio3").checked = false;
       document.body.style.backgroundColor = '#100720';
       showAlert("The dark mode has been enabled" , "success");
       //document.title = ('TextUtils - Dark mode');
@@ -37,8 +37,8 @@ function App() {
       setMode("light");
       document.body.style.backgroundColor = 'white';
       document.getElementById("inlineRadio1").checked = false;
-      // document.getElementById("inlineRadio2").checked = false;
-      // document.getElementById("inlineRadio3").checked = false;
+      document.getElementById("inlineRadio2").checked = false;
+      document.getElementById("inlineRadio3").checked = false;
       showAlert("The light mode has been enabled ", "success")
       //document.title = ('TextUtils - Light mode');
     }
@@ -53,7 +53,7 @@ function App() {
 
   const invokePurpleChecks = ()=> {
     setBtnColor("#231955");
-    setChecks("red");
+    setChecks("Purple");
     document.body.style.backgroundColor = '#810955';
     showAlert("The red mode has been enabled ", "success")
   }
