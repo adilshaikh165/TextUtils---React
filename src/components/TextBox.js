@@ -26,9 +26,7 @@ export default function TextBox(props) {
     }
 
     const handleCopyClick = ()=>{
-        var text = document.getElementById("exampleFormControlTextarea1");
-        text.select();
-        navigator.clipboard.writeText(text.value);
+        navigator.clipboard.writeText(text);
         props.showAlert("Copied to keyboard", "success");
 
     }
@@ -50,27 +48,10 @@ export default function TextBox(props) {
    
     const [text, setText] = useState('');
 
-    const[style,setStyle] = useState({
-        backgroundColor:'light',
-    });
+    // const[style,setStyle] = useState({
+    //     backgroundColor:'light',
+    // });
 
-    
-    const changeBtnColor = ()=> {
-        if(style.backgroundColor === 'green'){
-            setStyle({
-               
-            })
-        }else if(style.backgroundColor === 'red'){
-            setStyle({
-                backgroundColor : '#F47C7C'
-            })
-        }
-        else if(style.backgroundColor === 'grey'){
-            setStyle({
-                backgroundColor : '#000000'
-            })
-        }
-    }
 
     
   return (
@@ -82,7 +63,7 @@ export default function TextBox(props) {
                   <textarea className="form-control" value={text} style={{ backgroundColor: props.mode === 'dark' ? '#27283d' : 'white', color: props.mode === 'dark' ? 'white' : '#27283d' }} onChange={handleOnChange} id="exampleFormControlTextarea1" rows="8"></textarea>
               </div>
               
-              <div className="container"  onClick={changeBtnColor}>
+              <div className="container" >
                 <button style={{backgroundColor: props.btncolor}} disabled = {text.length === 0}className="btn btn-primary mx-1 my-1" onClick={handleUpClick} >Convert to UpperCase</button>
                 <button style={{backgroundColor: props.btncolor}} disabled = {text.length === 0} className="btn btn-primary mx-1 my-1" onClick={handleLowClick}>Convert to LowerCase</button>
                 <button style={{backgroundColor: props.btncolor}} disabled = {text.length === 0}className='btn btn-primary mx-1 my-1' onClick={handleCopyClick}>Copy Text</button>
@@ -101,7 +82,7 @@ export default function TextBox(props) {
 
       <div className="container my-3" style={{ color: props.mode === 'dark' ? 'white' : '#100720' }}>
               <h1>Text Summary</h1>
-              <p><i><b>{text.split(" ").filter((elements)=>{return elements.length!==0}).length}</b></i> words and <i><b>{text.length}</b></i> charachters</p>
+              <p><i><b>{text.split(/\s+/).filter((elements)=>{return elements.length!==0}).length}</b></i> words and <i><b>{text.length}</b></i> charachters</p>
               <p><i><b>{0.008 * text.split(" ").filter((elements)=>{return elements.length!==0}).length}</b></i> Minutes read</p>
               <h2>Preview</h2>
               <p>{text.length > 0 ? text : "Nothing to preview here"}</p>

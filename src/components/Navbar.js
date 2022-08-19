@@ -35,17 +35,17 @@ export default function Navbar(props) {
         <label className="form-check-label" htmlFor="inlineRadio1">Green</label>
       </div>
       <div className={`form-check form-check-inline text-${props.mode=== 'light' ? 'dark' : 'light'}`}>
-        <input className="form-check-input" onClick={props.invokeRedChecks} type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2"/>
+        <input className="form-check-input" onClick={props.invokePurpleChecks} type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2"/>
         <label className="form-check-label" htmlFor="inlineRadio2">Red</label>
       </div>
       <div className={`form-check form-check-inline text-${props.mode=== 'light' ? 'dark' : 'light'}`}>
-        <input className="form-check-input" onClick={props.invokeGreyChecks} type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3" />
+        <input className="form-check-input" onClick={props.invokeGreyChecks} type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3"  />
         <label className="form-check-label" htmlFor="inlineRadio3">Grey</label>
       </div>
       
       <div className={`form-check form-switch text-${props.mode=== 'light' ? 'dark' : 'light'}`}>
-        <input className="form-check-input" onClick={props.toggleMode} type="checkbox" id="flexSwitchCheckDefault"/>
-        <label className="form-check-label" htmlFor="flexSwitchCheckDefault">Enter Dark Mode</label>
+        <input className="form-check-input" onClick={props.toggleMode} type="checkbox" id="flexSwitchCheckDefault" />
+        <label className={`form-check-label`} htmlFor="flexSwitchCheckDefault" >Enter Dark Mode</label>
       </div>
 
     </div>
